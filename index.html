@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ricky's Herbs</title>
+<style>
+:root{--pink:#f2a7bd;--soft:#f8d3de;--black:#141414;--sage:#8fa88a;--white:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+*{box-sizing:border-box}
+body{margin:0; background-image:url('herb-background.jpg');background:var(--white);color:var(--pink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px}
+.box{background:var(--black);color:var(--pink);border-radius:18px;padding:28px 24px;margin-bottom:24px;border:1px solid #2a2a2a}
+header.box{text-align:center}
+h1{margin:0;font-size:2.4rem;font-weight:normal;letter-spacing:.04em}
+.tag{color:var(--soft);font-style:italic;margin:6px 0 0}
+h2{margin:0 0 6px;font-weight:normal;font-size:1.5rem;border-bottom:1px solid var(--sage);padding-bottom:8px}
+.sub{color:var(--soft);font-size:.9rem;margin:0 0 14px}
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.prices a{display:block;text-decoration:none;color:var(--pink);border:1px solid var(--sage);border-radius:14px;padding:16px;transition:background .2s}
+.prices a:hover,.chips a:hover{background:#221b1e}
+.prices b{display:block;font-weight:normal;font-size:1.1rem}
+.prices span{color:var(--soft);font-size:.9rem}
+.prices em{display:block;margin-top:6px;font-size:.8rem;color:var(--sage)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{color:var(--pink);text-decoration:none;border:1px solid #3a3a3a;border-radius:999px;padding:6px 14px;font-size:.9rem}
+ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+li{padding:8px 12px;border-left:2px solid var(--sage);background:#1b1b1b;border-radius:0 8px 8px 0}
+.combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.combo{border:1px solid var(--sage);border-radius:14px;padding:16px}
+.combo h3{margin:0;font-weight:normal;font-size:1.15rem}
+.combo p{margin:6px 0;color:var(--soft);font-size:.9rem}
+.combo .p{color:var(--pink);font-size:1.1rem}
+.top{display:inline-block;margin-top:14px;color:var(--sage);text-decoration:none;font-size:.85rem}
+.emailme  .followmeoninstagram{color:pink;text-decoration:none}
+.link:hover{color:pink;}
+footer{text-align:center;color:#a06b7c;font-size:.85rem} 
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="box">
+    <h1>Ricky's Herbs</h1>
+    <p class="tag">Nature's remedies</p>
+  </header>
+
+  <section class="box" id="prices">
+    <h2>Price Guide</h2>
+    <p class="sub">Tap a price to jump to that section.</p>
+    <div class="prices">
+      <a href="#flowers"><b>Flowers &amp; Herbs</b><span>KSh 300 from 30g</span><em>View flowers ↓</em></a>
+      <a href="#oils"><b>All Oils</b><span>KSh 700 from 30ml</span><em>View oils ↓</em></a>
+      <a href="#combos"><b>Rose Water</b><span>KSh 500 / 100ml</span><em>View combos ↓</em></a>
+    </div>
+  </section>
+
+  <nav class="box">
+    <h2>Browse Categories</h2>
+    <div class="chips" id="chips"></div>
+  </nav>
+
+  <div id="sections"></div>
+
+  <section class="box" id="combos">
+    <h2>Debut Combos</h2>
+    <p class="sub">Handpicked blends, ready to go.</p>
+    <div class="combos">
+      <div class="combo"><h3>Aphrodite Beauty</h3><p>Rose water, rosehip oil, hibiscus</p><div class="p">KSh 1,500</div></div>
+      <div class="combo"><h3>Hunk Hercules</h3><p>Maca root, moringa, seamoss</p><div class="p">KSh 1,045</div></div>
+      <div class="combo"><h3>Zen Charger</h3><p>Ashwagandha, chamomile, lavender</p><div class="p">KSh 945</div></div>
+    </div>
+    <a class="top" href="#prices">↑ Back to price guide</a>
+  </section>
+
+  <footer>© Ricky's Herbs
+            Contact us at <strong>: <a href="mailto:rickysherbs@gmail.com">Email me</a></strong> <br>
+            <a href="https://www.instagram.com/herbs.and.stuff_/" target="_blank" rel="noopener noreferrer">Follow me on Instagram!!</a>
+          </footer>
+</div>
+
+<script>
+const data=[
+ ["Butters",["Cocoa butter","Shea butter"]],
+ ["Capsules",["Vitamin C"]],
+ ["Carrier Oils",["Jojoba oil","Coconut oil","Avocado oil","Pure castor oil"]],
+ ["Essential Oils",["Strawberry seed oil","Tea tree oil","Peppermint oil","Ginger oil","Eucalyptus oil"]],
+ ["Dried Fruits",["Cranberries","Blueberries"]],
+ ["Extract",["Seamoss","Hawthorn berry","Chastberry extract"]],
+ ["Flowers",["Calendula","Hibiscus","Chamomile","Lavender"]],
+ ["Herbs",["Rosemary","Sage","Ashwagandha","Moringa","Neem","Stinging nettle","Licorice root"]],
+ ["Oils",["Rosehip oil","Jamaican black castor oil","Clove seed oil"]],
+ ["Seeds",["Fennel","Fenugreek","Flaxseed","Chia seeds"]],
+ ["Tea",["Green tea","Lemon balm","Matcha"]],
+ ["Spices",["Cayenne","Cinnamon","Ginger","Star anise","Turmeric","Thyme","Basil","Cumin seeds"]],
+ ["Nuts",["Almonds","Pecans","Pistachios"]]
+];  
+const id=n=>n.toLowerCase().replace(/[^a-z]+/g,"-");
+const chips=document.getElementById("chips"),out=document.getElementById("sections");
+data.forEach(([name,items])=>{
+  chips.insertAdjacentHTML("beforeend",`<a href="#${id(name)}">${name}</a>`);
+  out.insertAdjacentHTML("beforeend",`<section class="box" id="${id(name)}"><h2>${name}</h2><ul>${items.map(i=>`<li>${i}</li>`).join("")}</ul><a class="top" href="#prices">↑ Back to price guide</a></section>`);
+});
+chips.insertAdjacentHTML("beforeend",`<a href="#combos">Debut Combos</a>`);
+</script>
+</body>
+</html>
